@@ -6,22 +6,20 @@ calc_btn.addEventListener("click", analyze);
 
 /* is pulling the right term here? Either way I am getting the id's of these elements from my index.html so they can be called through my
 main.js */
-
 function analyze() {
     const userSport = document.getElementById("userSport");
     const userPreference = document.getElementById("userPreference");
     const userPeriod = document.getElementById("userPeriod");
     const userColor = document.getElementById("userColor");
 
-
     /* Basketball Section- Red Basketball College teams past & present logic
-    
-    For the basketball section the logic here is that once a user has chosen basketball as their sport's preference
-    the output would be a Basketball team that depends on if a user prefers college or professional teams, classic or current teams and finally the output
-    is also decided by what a user's favorite color is. 
-    Current teams outputs will have a social media "#" to show we live in current times as opposed to the past
-    when supporting a sports team could only be experienced in-person. Social media allows people to support 
-    teams from anywhere in the world */
+      
+      For the basketball section the logic here is that once a user has chosen basketball as their sport's preference
+      the output would be a Basketball team that depends on if a user prefers college or professional teams, classic or current teams and finally the output
+      is also decided by what a user's favorite color is. 
+      Current teams outputs will have a social media "#" to show we live in current times as opposed to the past
+      when supporting a sports team could only be experienced in-person. Social media allows people to support 
+      teams from anywhere in the world */
 
 
     console.log("")
@@ -534,23 +532,39 @@ function analyze() {
 
 
 
-
     function clearInputValues() {
-        let userSport = document.getElementById("userSport");
-        userSport.value = "";
-        let inputTwo = document.getElementById("userPreference");
+        const inputOne = document.getElementById("userSport");
+        inputOne.value = "";
+        const inputTwo = document.getElementById("userPreference");
         inputTwo.value = "";
-        let inputThree = document.getElementById("userPeriod");
+        const inputThree = document.getElementById("userPeriod");
         inputThree.value = "";
-        let inputFour = document.getElementById("userColor");
+        const inputFour = document.getElementById("userColor");
         inputFour.value = "";
+
+
+
     }
 
-    document.getElementById("refresh").addEventListener("click", clearInputValues);
+
+    function clearOutput() {
+        let o = document.getElementById("output");
+        o.value = "";
+        console.clear();
+        console.log("Console log output has been cleared.");
+    }
+
+    function clearInputAndOutput() {
+        clearInputValues();
+        clearOutput();
+    }
+
+
+    document.getElementById("refresh").addEventListener("click", clearInputAndOutput);
 
 
 
-    output(dropdown.value, true)
+    output(dropdown.value, true);
     output("<p>Example of <b>HTML-formatted</b> output</p>", true);
     output("<h3>Example of output that should be HTML-formatted but without sending second parameter</h3>", true);
     output("Example of regular text output, letting the output() function do the formatting.");
