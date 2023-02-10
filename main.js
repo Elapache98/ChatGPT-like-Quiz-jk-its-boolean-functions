@@ -549,9 +549,17 @@ function analyze() {
 
     function clearOutput() {
         let o = document.getElementById("output");
-        o.value = "";
-        console.clear();
-        console.log("Console log output has been cleared.");
+        if (o) {
+            /* this was hard until I did some extensive research but what I found was since the output element is in a div in the
+            index html file I had to make sure the ".innerHTML" was there so the output content can then be 
+            recognized in the string. Before I had it as let o=""; but the output wasn't clearing till I 
+            added the .innerHTML */
+            o.innerHTML = "";
+            console.clear();
+            console.log("Output and console log have been cleared.");
+        } else {
+            console.log("Element with id 'output' not found.");
+        }
     }
 
     function clearInputAndOutput() {
