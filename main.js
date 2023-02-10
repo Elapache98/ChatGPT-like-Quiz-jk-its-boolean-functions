@@ -529,6 +529,141 @@ function analyze() {
                 }
     }
 
+    /* ERROR STATES LOGIC */
+
+    /* users answers none */
+
+    console.log("")
+    if (userSport.value == "") {
+        if (userPreference.value == "")
+            if (userPeriod.value == "")
+                if (userColor.value == "") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers only sports question */
+    console.log("")
+    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
+        if (userPreference.value == "")
+            if (userPeriod.value == "")
+                if (userColor.value == "") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers only preference level of sports question */
+
+    console.log("")
+    if (userSport.value == "") {
+        if (userPreference.value == "College" || userPreference.value == "Professional")
+            if (userPeriod.value == "")
+                if (userColor.value == "") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers only time period of sports question */
+
+    console.log("")
+    if (userSport.value == "") {
+        if (userPreference.value == "")
+            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
+                if (userColor.value == "") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers only favorite color question */
+
+    console.log("")
+    if (userSport.value == "") {
+        if (userPreference.value == "")
+            if (userPeriod.value == "")
+                if (userColor.value == "Blue" || userColor.value == "Red" || userColor.value == "Yellow") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers only questions about sports and professional level preference (2/4Q) */
+
+    console.log("")
+    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
+        if (userPreference.value == "College" || userPreference.value == "Professional")
+            if (userPeriod.value == "")
+                if (userColor.value == "") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+    /* users answers only questions about sports and period preference (2/4Q) */
+
+    console.log("")
+    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
+        if (userPreference.value == "")
+            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
+                if (userColor.value == "") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers only questions about sports and color preference (2/4Q) */
+
+    console.log("")
+    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
+        if (userPreference.value == "")
+            if (userPeriod.value == "")
+                if (userColor.value == "Yellow" || userColor.value == "Blue" || userColor.value == "Red") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers only questions about sports, professional level, and time preference (3/4Q) */
+
+    console.log("")
+    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
+        if (userPreference.value == "College" || userPreference.value == "Professional")
+            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
+                if (userColor.value == "") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+
+    /* users answers only questions about sports,time preference and color (3/4Q) */
+
+    console.log("")
+    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
+        if (userPreference.value == "")
+            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
+                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers only questions about sports,professional and color preference (3/4Q) */
+
+    console.log("")
+    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
+        if (userPreference.value == "College" || userPreference.value == "Professional")
+            if (userPeriod.value == "")
+                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers all questions but sports preference (3/4Q) */
+
+    console.log("")
+    if (userSport.value == "") {
+        if (userPreference.value == "College" || userPreference.value == "Professional")
+            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
+                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+
+
 
 
 
@@ -557,8 +692,6 @@ function analyze() {
             o.innerHTML = "";
             console.clear();
             console.log("Output and console log have been cleared.");
-        } else {
-            console.log("Element with id 'output' not found.");
         }
     }
 
