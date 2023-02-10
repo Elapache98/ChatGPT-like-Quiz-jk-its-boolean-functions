@@ -557,8 +557,6 @@ function analyze() {
             o.innerHTML = "";
             console.clear();
             console.log("Output and console log have been cleared.");
-        } else {
-            console.log("Element with id 'output' not found.");
         }
     }
 
