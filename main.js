@@ -662,6 +662,45 @@ function analyze() {
                 }
     }
 
+    /* users answers professional and time period preference (2/4Q) */
+
+    console.log("")
+    if (userSport.value == "") {
+        if (userPreference.value == "College" || userPreference.value == "Professional")
+            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
+                if (userColor.value == "") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+    /* users answers professional and color preference (2/4Q) */
+
+    console.log("")
+    if (userSport.value == "") {
+        if (userPreference.value == "College" || userPreference.value == "Professional")
+            if (userPeriod.value == "")
+                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+
+    /* users answers professional and color preference (2/4Q) */
+
+    console.log("")
+    if (userSport.value == "") {
+        if (userPreference.value == "")
+            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
+                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
+                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+                }
+    }
+
+
+
+
+
+
 
 
 
