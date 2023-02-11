@@ -7,10 +7,10 @@ calc_btn.addEventListener("click", analyze);
 /* is pulling the right term here? Either way I am getting the id's of these elements from my index.html so they can be called through my
 main.js */
 function analyze() {
-    const userSport = document.getElementById("userSport");
-    const userPreference = document.getElementById("userPreference");
-    const userPeriod = document.getElementById("userPeriod");
-    const userColor = document.getElementById("userColor");
+    let userSport = document.getElementById("userSport");
+    let userPreference = document.getElementById("userPreference");
+    let userPeriod = document.getElementById("userPeriod");
+    let userColor = document.getElementById("userColor");
 
     /* Basketball Section- Red Basketball College teams past & present logic
       
