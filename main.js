@@ -529,7 +529,55 @@ function analyze() {
                 }
     }
 
-    /* ERROR STATES LOGIC */
+    /* this function fetches the input elements from the ID's of our input. After that is done
+    I am telling the computer to make the value blank once a certain action is done. This will
+    occur once we run the function through an evenlistener */
+
+    function clearInputValues() {
+        let inputOne = document.getElementById("userSport");
+        inputOne.value = "";
+        let inputTwo = document.getElementById("userPreference");
+        inputTwo.value = "";
+        let inputThree = document.getElementById("userPeriod");
+        inputThree.value = "";
+        let inputFour = document.getElementById("userColor");
+        inputFour.value = "";
+
+
+
+    }
+
+    /* this function fetches the output element in the html file our variable name for it is "o" 
+     the output will clear once we add an eventlistener to it */
+    function clearOutput() {
+        let o = document.getElementById("output");
+        if (o) {
+            /* this was hard until I did some extensive research but what I found was since the output element is in a div in the
+            index html file I had to make sure the ".innerHTML" was there so the output content can then be 
+            recognized in the string. Before I had it as let o=""; but the output wasn't clearing till I 
+            added the .innerHTML */
+            o.innerHTML = "";
+            console.clear();
+            console.log("Output and console log have been cleared.");
+        }
+    }
+
+    /* the final function fetches the functions that clear the inputs and outputs. We combine this two funcitons into one new function call
+    "clearInputAndOutput" */
+    function clearInputAndOutput() {
+        clearInputValues();
+        clearOutput();
+    }
+
+    /* now for the magic, we get the id (refresh) of the second button on our index.html file and run the function that hosts
+    both the clearInput and clearOutput so that when a user clicks on the refresh button out inputs and outputs are cleared
+    from the quiz. */
+    document.getElementById("refresh").addEventListener("click", clearInputAndOutput);
+
+    /* ERROR STATES LOGIC 
+   making the refresh function made me realize what happens if a user chooses to not answer all 4 questions?
+   My current outputs didn't take that into consideration so I added so error states using boolean logic and OR statements for 
+   when a user doesn't answer all the questions but still presses the "Find my Team!" button to get their answer */
 
     /* users answers none */
 
@@ -696,51 +744,6 @@ function analyze() {
                 }
     }
 
-
-
-
-
-
-
-
-
-
-
-    function clearInputValues() {
-        const inputOne = document.getElementById("userSport");
-        inputOne.value = "";
-        const inputTwo = document.getElementById("userPreference");
-        inputTwo.value = "";
-        const inputThree = document.getElementById("userPeriod");
-        inputThree.value = "";
-        const inputFour = document.getElementById("userColor");
-        inputFour.value = "";
-
-
-
-    }
-
-
-    function clearOutput() {
-        let o = document.getElementById("output");
-        if (o) {
-            /* this was hard until I did some extensive research but what I found was since the output element is in a div in the
-            index html file I had to make sure the ".innerHTML" was there so the output content can then be 
-            recognized in the string. Before I had it as let o=""; but the output wasn't clearing till I 
-            added the .innerHTML */
-            o.innerHTML = "";
-            console.clear();
-            console.log("Output and console log have been cleared.");
-        }
-    }
-
-    function clearInputAndOutput() {
-        clearInputValues();
-        clearOutput();
-    }
-
-
-    document.getElementById("refresh").addEventListener("click", clearInputAndOutput);
 
 
 
