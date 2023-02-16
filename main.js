@@ -547,6 +547,7 @@ function analyze() {
 
     }
 
+
     /* this function fetches the output element in the html file our variable name for it is "o" 
      the output will clear once we add an eventlistener to it */
 
@@ -565,7 +566,7 @@ function analyze() {
         }
     }
 
-    /* the final function fetches the functions that clear the inputs and outputs. We combine this two funcitons into one new function call
+    /* the final function fetches the functions that clear the inputs and outputs as parameters. We combine this two funcitons into one new function call
     "clearInputAndOutput" */
 
     function clearInputAndOutput() {
@@ -581,182 +582,20 @@ function analyze() {
 
 
     /* ERROR STATES LOGIC 
-   making the refresh function made me realize what happens if a user chooses to not answer all 4 questions?
-   My current outputs didn't take that into consideration so I added so error states using boolean logic and OR statements for 
-   when a user doesn't answer all the questions but still presses the "Find my Team!" button to get their answer */
+    making the refresh function made me realize what happens if a user chooses to not answer all 4 questions?
+    My current outputs didn't take that into consideration so I added so error states using boolean logic and OR statements for 
+    when a user doesn't answer all the questions but still presses the "Find my Team!" button to get their answer */
 
-    /* users answers none */
-
-    console.log("")
-    if (userSport.value == "") {
-        if (userPreference.value == "")
-            if (userPeriod.value == "")
-                if (userColor.value == "") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers only sports question */
-    console.log("")
-    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
-        if (userPreference.value == "")
-            if (userPeriod.value == "")
-                if (userColor.value == "") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers only preference level of sports question */
+    /* users answers not one or more of the 4 questions */
 
     console.log("")
-    if (userSport.value == "") {
-        if (userPreference.value == "College" || userPreference.value == "Professional")
-            if (userPeriod.value == "")
-                if (userColor.value == "") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers only time period of sports question */
-
-    console.log("")
-    if (userSport.value == "") {
-        if (userPreference.value == "")
-            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
-                if (userColor.value == "") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers only favorite color question */
-
-    console.log("")
-    if (userSport.value == "") {
-        if (userPreference.value == "")
-            if (userPeriod.value == "")
-                if (userColor.value == "Blue" || userColor.value == "Red" || userColor.value == "Yellow") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers only questions about sports and professional level preference (2/4Q) */
-
-    console.log("")
-    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
-        if (userPreference.value == "College" || userPreference.value == "Professional")
-            if (userPeriod.value == "")
-                if (userColor.value == "") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-    /* users answers only questions about sports and period preference (2/4Q) */
-
-    console.log("")
-    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
-        if (userPreference.value == "")
-            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
-                if (userColor.value == "") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers only questions about sports and color preference (2/4Q) */
-
-    console.log("")
-    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
-        if (userPreference.value == "")
-            if (userPeriod.value == "")
-                if (userColor.value == "Yellow" || userColor.value == "Blue" || userColor.value == "Red") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers only questions about sports, professional level, and time preference (3/4Q) */
-
-    console.log("")
-    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
-        if (userPreference.value == "College" || userPreference.value == "Professional")
-            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
-                if (userColor.value == "") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
+    if (userSport.value == "" || userPreference.value == "" || userPeriod.value == "" || userColor.value == "") {
+        {
+            output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
+        }
     }
 
 
-    /* users answers only questions about sports,time preference and color (3/4Q) */
-
-    console.log("")
-    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
-        if (userPreference.value == "")
-            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
-                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers only questions about sports,professional and color preference (3/4Q) */
-
-    console.log("")
-    if (userSport.value == "Basketball" || userSport.value == "Soccer" || userSport.value == "Ice Hockey") {
-        if (userPreference.value == "College" || userPreference.value == "Professional")
-            if (userPeriod.value == "")
-                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers all questions but sports preference (3/4Q) */
-
-    console.log("")
-    if (userSport.value == "") {
-        if (userPreference.value == "College" || userPreference.value == "Professional")
-            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
-                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers professional and time period preference (2/4Q) */
-
-    console.log("")
-    if (userSport.value == "") {
-        if (userPreference.value == "College" || userPreference.value == "Professional")
-            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
-                if (userColor.value == "") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-    /* users answers professional and color preference (2/4Q) */
-
-    console.log("")
-    if (userSport.value == "") {
-        if (userPreference.value == "College" || userPreference.value == "Professional")
-            if (userPeriod.value == "")
-                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-
-    /* users answers professional and color preference (2/4Q) */
-
-    console.log("")
-    if (userSport.value == "") {
-        if (userPreference.value == "")
-            if (userPeriod.value == "Classic" || userPeriod.value == "Current")
-                if (userColor.value == "Yellow" || userColor.value == "Red" || userColor.value == "Blue") {
-                    output("⚠️ Hey, I need you to answer more questions to give you a worthwhile answer ⚠️");
-                }
-    }
-
-
-
-
-    output(dropdown.value, true);
-    output("<p>Example of <b>HTML-formatted</b> output</p>", true);
-    output("<h3>Example of output that should be HTML-formatted but without sending second parameter</h3>", true);
-    output("Example of regular text output, letting the output() function do the formatting.");
 
 
     endOutput();
